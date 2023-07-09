@@ -16,6 +16,7 @@ public class LoginPage extends BasePage {
 
     @Override
     public boolean isPageOpen() {
+
         return isExist(LOGIN_BUTTON);
     }
 
