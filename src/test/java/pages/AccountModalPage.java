@@ -1,9 +1,11 @@
 package pages;
 
+import elements.DropDown;
+import elements.Input;
 import models.Account;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.testng.internal.protocols.Input;
+
 
 public class AccountModalPage extends BasePage{
 
@@ -12,9 +14,15 @@ public class AccountModalPage extends BasePage{
     public AccountModalPage(WebDriver driver) {
         super(driver);
     }
-    public void create(Account account){
-        new Input(driver,"Account Name").write(account.getAccountName());
+    public AccountDetailsPage create(Account account){
+        new Input(driver, "Account Name").write(account.getAccountName());
         new Input(driver,"Website").write(account.getWebSite());
+        new DropDown(driver,"Type").selectOption(account.getType());
+        return clickSave();
+    }
+    public AccountDetailsPage clickSave(){
+        driver.findElement(SAVE_BUTTON).click();
+        return new AccountDetailsPage(driver);
     }
     @Override
     public boolean isPageOpen() {

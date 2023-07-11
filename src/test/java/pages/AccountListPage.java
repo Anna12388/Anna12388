@@ -12,7 +12,7 @@ public class AccountListPage extends BasePage{
         super(driver);
     }
     public AccountListPage open(){
-        driver.get(URL + "lightning/o/Account/list);
+        driver.get(BASE_URL + "lightning/o/Account/list");
         return this;
     }
     public AccountModalPage clickNewButton(){

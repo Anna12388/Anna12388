@@ -12,8 +12,9 @@ public class AccountTest extends BaseTest{
                 .login("acumtdu-e8yd@force.com","123456Qq")
                 .clickLoginButton();
         accountListPage.open()
-                .clickNewButton()
-        Account account = new Account("TestName", "www.onliner.by");
+                .clickNewButton();
+        Account account = new Account("TestName", "www.onliner.by","Investor");
+
         accountModalPage.create(account);
 
     }
