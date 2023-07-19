@@ -41,7 +41,7 @@ public abstract class BaseTest {
         driver.manage().window().maximize();
 
 
-        testContext.setAttribute( % "driver", driver);
+        testContext.setAttribute("driver", driver);
 
         loginPage = new LoginPage(driver);
         homePage = new HomePage(driver);
