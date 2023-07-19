@@ -15,6 +15,7 @@ public class AccountTest extends BaseTest{
                 .clickLoginButton();
         accountListPage.open()
                 .clickNewButton();
+        accountModalPage.isPageOpen();
 
         Account account = new Account("Test1","www.onliner.by","Investor", "Banking",
                 "36749400","346789100","10","12","66801","12345",
@@ -23,6 +24,8 @@ public class AccountTest extends BaseTest{
 
 
         accountModalPage.create(account);
+        accountModalPage.clickSave();
+        accountModalPage.isPageOpen();
 
         assertEquals(accountDetailsPage.getFieldValue("Account Name"), account.getAccountName());
         assertEquals(accountDetailsPage.getFieldValue("Website"), account.getWebSite());
@@ -33,8 +36,8 @@ public class AccountTest extends BaseTest{
         assertEquals(accountDetailsPage.getFieldValue("Employees"), account.getEmployees());
         assertEquals(accountDetailsPage.getFieldValue("Annual Revenue"), account.getAnnualRevenue() + "000 000 000 Br");
         assertEquals(accountDetailsPage.getFieldValue("Description"), account.getDescription());
-        assertEquals(accountDetailsPage.getFieldValue("Billing Address"), accountDetailsPage.getBillingAddress(account);
-        assertEquals(accountDetailsPage.getFieldValue("Shipping Address"), accountDetailsPage.getShippingAddress(account);
+        assertEquals(accountDetailsPage.getFieldValue("Billing Address"), accountDetailsPage.getBillingAddress(account));
+        assertEquals(accountDetailsPage.getFieldValue("Shipping Address"), accountDetailsPage.getShippingAddress(account));
 
 
     }
