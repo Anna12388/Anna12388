@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 public class Input {
 
-    String inputLocator = "//span[text()='%']/ancestor::div[contains(@class, 'uiInput')]//input";
+    String inputLocator = "//span[text()='%s']/ancestor::div[contains(@class,'uiInput')]//input";
     WebDriver driver;
     String label;
 
