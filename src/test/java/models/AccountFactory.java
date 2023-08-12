@@ -1,9 +1,12 @@
 package models;
 
+import com.github.javafaker.Faker;
+
 public class AccountFactory {
+    static Faker faker = new Faker();
     public static Account get() {
         return Account.builder()
-                .accountName("Test1")
+                .accountName(faker.funnyName().name())
                 .phone("3752951888868")
                 .fax("36749400")
                 .webSite("www.onliner.by")
@@ -11,7 +14,7 @@ public class AccountFactory {
                 .industry("Banking")
                 .employees("15")
                 .annualRevenue("120")
-                .billingCity("12345")
+                .billingCity(faker.address().citySuffix())
                 .billingZip_PostalCode("12367")
                 .billingState_Provence("56788")
                 .billingCountry("34")
