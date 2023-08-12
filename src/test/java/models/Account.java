@@ -10,11 +10,11 @@ import lombok.Data;
 @Builder
 public class Account {
     String accountName;
+    String phone;
+    String fax;
     String webSite;
     String type;
     String industry;
-    String phone;
-    String fax;
     String employees;
     String annualRevenue;
     String billingCity;

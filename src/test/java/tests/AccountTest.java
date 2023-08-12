@@ -1,6 +1,7 @@
 package tests;
 
 import models.Account;
+import models.AccountFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -18,11 +19,7 @@ public class AccountTest extends BaseTest{
         accountListPage.open()
                 .clickNewButton();
 
-        Account account = new Account("Test1","www.onliner.by","Investor", "Banking",
-                "36749400","346789100","10","12","66801","12345",
-                "1358","1000","Hamburg","567899","90986",
-                "Germany","new article", "GrosseBleichen","DHL345");
-
+        Account account = AccountFactory.get();
 
         accountModalPage.create(account);
 
